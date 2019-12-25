@@ -1,0 +1,12 @@
+<ion-content>
+    <ion-list lines="none">
+        <ion-item *ngFor="let message of messages">
+            <ion-chip (click)="onMessageClick(message)"
+                    [slot]="message.author == 'Ismail' ? 'end' : 'start'"
+                    [color]="message.author == 'Ismail' ? 'primary' : ''"
+            >{{ message.content }}</ion-chip>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+<app-footer-input (enter)="onInputEnter($event)"></app-footer-input>
